@@ -41,15 +41,21 @@ Vrinda online store wants to create an annual sales report for 2022. so that, Vr
   - **Ship-Country:** Shipped Country
 
 ### Tools
-- PostgreSQL - Data Cleaning and Data Analysis
-- Google spreadsheet - Statistical Analysis
-- Tableau - Data Visualization
+- Excel
+- 	Data Cleaning, Data Analysis, Data Visualization
 
 ### Data Cleaning/Preparation
 In the initial data preparation phase, we performed the following tasks
-1. Data inspection and exploration.
-2. Handling missing values.
-3. Data cleaning & formatting.
+1. Data corrections.
+2. Null values check.
+3. Data formatting.
+
+### Data Processing:
+1. Created new column 'Age Group' from 'Age' column using IFS formula in order to address business question. Categorized the customers as below
+   	Age >= 50, then 'Senior'
+   	Age >= 30, then 'Adult'
+   	Age < 30, then 'Tennager'
+2. Extracted only Month data from Date column in order to address business question.
 
 ### Exploratory Data Analysis (EDA)
 EDA involved in exploring the A/B test data to answer some questions, such as:
@@ -60,90 +66,15 @@ EDA involved in exploring the A/B test data to answer some questions, such as:
 
 ### Data Analysis
 
-1. What was the conversion rate of all users?
-   
-   ```sql
-   SELECT CONCAT(ROUND((purchase_count/CAST(total_user AS NUMERIC))*100,2),'%') AS total_conversion_rate
-   FROM (
-      SELECT COUNT(DISTINCT uid) AS purchase_count, CAST(COUNT(DISTINCT id) AS FLOAT) AS total_user
-      FROM users
-      LEFT JOIN activity
-          ON users.id = activity.uid ) tbl;
-   ```
-2. What is the user conversion rate for the control and treatment groups?
+1. Compare the sales and orders for 2022. Which month got the highest sales and orders?
+2. Who purchased more in 2022? Men or Women?
+3. What are different order status in 2022?
+4. Identify top 5 states contributing to the sales?
+5. Which channel is contributing to maximum sales?
+6. Highest selling category?
+7. Relation between age and gender based on number of orders?
 
-   ```sql
-   WITH CTE1 AS (
-   SELECT grp, (CAST(purchase_count AS FLOAT)/CAST(total_users AS FLOAT))*100 AS conv_rate
-   FROM (
-         SELECT groups.group as grp, COUNT(DISTINCT id) AS total_users, COUNT(DISTINCT activity.uid) AS purchase_count
-         FROM users
-         JOIN groups
-             ON users.id = groups.uid
-         LEFT JOIN activity
-             ON users.id = activity.uid
-         GROUP BY groups.group ) tbl
-   )
-
-   SELECT grp, CONCAT(ROUND(CAST(conv_rate AS NUMERIC), 2), '%') AS conversion_rate
-   FROM CTE1;
-   ```
-
-
-   <img width="629" alt="Conversion rate per group" src="https://github.com/VimalVikash-Sigamani/Globox-A-B-Testing/assets/161229746/07dc3d4a-b9d1-4b56-8399-21da02d3c78e">
-
-
-
-3. What is the average amount spent per user for the control and treatment groups, including users who did not convert?
-
-   ```sql
-   SELECT grp, ROUND(AVG(total_amt),2) AS average_amount_spent
-   FROM (
-         SELECT groups.uid, groups.group as grp, SUM(COALESCE(spent,0)) total_amt
-         FROM groups
-         LEFT JOIN activity
-             ON groups.uid = activity.uid
-         GROUP BY groups.uid, groups.group ) tbl
-   GROUP BY grp
-   ORDER BY grp;
-   ```
-
-   <img width="626" alt="Average amount spent per group" src="https://github.com/VimalVikash-Sigamani/Globox-A-B-Testing/assets/161229746/ce07bf27-d809-4a0f-a939-3acc57d0145b">
-
-   
-4. Extract the user ID, user’s country, user’s gender, user’s device type, user’s test group, whether or not they converted (spent > $0), and how much they spent in total ($0+).
-
-   ```sql
-   WITH CTE1 AS (
-   SELECT id, ROUND(SUM(spent_amt),2) AS Total_amount_spent
-   FROM (
-         SELECT id, COALESCE(spent, 0) AS spent_amt
-         FROM users
-         LEFT JOIN activity
-             ON users.id = activity.uid ) tbl
-   GROUP BY id
-   ),
-
-   CTE2 AS (
-        SELECT *
-        ,CASE WHEN total_amount_spent = 0 THEN 0 ELSE 1 END AS Converted
-        FROM CTE1
-   )
-
-   SELECT CTE2.id, 
-	        COALESCE(country, 'OTHER') AS cleaned_country, 
-		      COALESCE(gender, 'MISSING') AS cleaned_gender, 
-  	      COALESCE(device, 'MISSING') AS cleaned_device, 
-          grp.group,
-          converted, 
-          total_amount_spent as total_spent
-   FROM CTE2 
-   JOIN users
-	   	 ON CTE2.id = users.id
-   JOIN groups grp
-		   ON CTE2.id = grp.uid;
-   ```
-### Other Insights
+   ### Other Insights
 - Disturbation of amount spent.
   
   <img width="625" alt="Disturbation of amount spent" src="https://github.com/VimalVikash-Sigamani/Globox-A-B-Testing/assets/161229746/b5639513-2ad8-4235-9683-84f2bef3d6ba">
