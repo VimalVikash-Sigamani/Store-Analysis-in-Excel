@@ -4,20 +4,21 @@
 - [Project Overview](#project-overview)
 - [Data Source](#data-source)
 - [Tools](#tools)
-- [Data Cleaning/Preparation](#data-cleaningpreparation)
-- [Exploratory Data Analysis (EDA)](#exploratory-data-analysis-eda)
-- [Data Analysis & Data Visualizaation](#data-analysisdata-visualization)
+- [Data Cleaning](#data-cleaning)
+- [Data Processing](#data_processing)
+- [Data Analysis & Data Visualization](#data-analysis-and-data-visualization)
+- [Interactive Dashboard](#interactive-dashboard)
 - [Results/Findings](#resultsfindings)
 - [Recommedations](#recommedations)
 
 ### Project Overview
-Vrinda online store wants to create an annual sales report for 2022. so that, Vrinda can understand their customers and grow more sales in 2023.
+Vrinda Online Store aims to generate a comprehensive annual sales report for 2022 to gain insights into their customer base and strategize for increased sales in 2023.
 
 <include online store image>
 
 ### Data Source
 
-<Include Source Excel sheet>
+To reference the data source [Click here](https://docs.google.com/spreadsheets/d/1GU7lqwdvYfTGoxPXMLb5SucVjKEtxCC-vlK9KNT1xH8/edit#gid=392375140)
   
   - **Index:** Unique sequentially value for each orders.
   - **Order ID:** Unique order number for each orders. 
@@ -40,27 +41,23 @@ Vrinda online store wants to create an annual sales report for 2022. so that, Vr
 
 ### Tools
 - Excel
-  	Data Cleaning, Data Analysis, Data Visualization
+  - Data Cleaning
+  - Data Processing
+  - Data Analysis
+  - Data Visualization
 
-### Data Cleaning/Preparation
-In the initial data preparation phase, we performed the following tasks
-1. Data corrections.
-2. Null values check.
-3. Data formatting.
+### Data Cleaning
+During the initial data preparation phase, the following tasks were undertaken:
+1. Correcting data errors.
+2. Checking for null values.
+3. Formatting the data.
 
-### Data Processing:
-1. Created new column 'Age Group' from 'Age' column using IFS formula in order to address business question. Categorized the customers as below
-   - Age >= 50, then 'Senior'
-   - Age >= 30, then 'Adult'
-   - Age < 30, then 'Tennager'
-2. Extracted only Month data from Date column in order to address business question.
-
-### Exploratory Data Analysis (EDA)
-EDA involved in exploring the A/B test data to answer some questions, such as:
-1. What was the conversion rate of all users?
-2. What is the user conversion rate for the control and treatment groups?
-3. What is the average amount spent per user for the control and treatment groups, including users who did not convert?
-4. Extract the user ID, user’s country, user’s gender, user’s device type, user’s test group, whether or not they converted (spent > $0), and how much they spent in total ($0+).
+### Data Processing
+1. The 'Age Group' column was generated from the 'Age' column using the IFS formula to address a specific business inquiry. Customers were categorized as follows:
+   - If Age is greater than or equal to 50, labeled as 'Senior'.
+   - If Age is greater than or equal to 30, labeled as 'Adult'.
+   - If Age is less than 30, labeled as 'Teenager'.
+2. The Month data was extracted exclusively from the Date column to cater to a business query.
 
 ### Data Analysis & Data Visualization
 
@@ -103,12 +100,17 @@ EDA involved in exploring the A/B test data to answer some questions, such as:
 9. Relation between age and gender based on number of orders? </br>
 
    Age group of adult women (30-49 years) contributes the most, making up approximately 35% of the total.
-   
-    
+
+   <img width="387" alt="Age group Vs Gender" src="https://github.com/VimalVikash-Sigamani/Store-Analysis-in-Excel/assets/161229746/6d89c06a-4a21-42f3-b109-d68269b713c6">
 
 
-    [Click here](https://docs.google.com/spreadsheets/d/1GU7lqwdvYfTGoxPXMLb5SucVjKEtxCC-vlK9KNT1xH8/edit#gid=392375140) for detailed calculations.
+10. Annual Report 2022_Dashboard:
 
+    <img width="927" alt="Annual Report 2022 - Dashboard" src="https://github.com/VimalVikash-Sigamani/Store-Analysis-in-Excel/assets/161229746/7202fd98-8536-4cfd-8190-adfa93263142">
+
+### Interactive Dashboard
+To access the interactive dashboard:
+   [Click here to view the interactive dashboard](https://docs.google.com/spreadsheets/d/1GU7lqwdvYfTGoxPXMLb5SucVjKEtxCC-vlK9KNT1xH8/edit#gid=392375140)
  
 ### Results/Findings
 - Women exhibit a higher likelihood of purchasing compared to men, constituting approximately 64% of total sales.
@@ -118,5 +120,5 @@ EDA involved in exploring the A/B test data to answer some questions, such as:
 - The top-selling products are Set, Kurta, and Western dress collectively contribute to approximately 88% of total sales.
  
 ### Recommedations
-To boost sales in 2023, focus on targeting female customers aged 30-49 residing in Maharashtra, Karnataka, and Uttar Pradesh. Show advertisements, offers, and coupons on Amazon, Myntra, and Flipkart platforms.
+- To boost sales in 2023, focus on targeting female customers aged 30-49 residing in Maharashtra, Karnataka, and Uttar Pradesh. Show advertisements, offers, and coupons on Amazon, Myntra, and Flipkart platforms.
 
