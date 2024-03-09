@@ -6,9 +6,7 @@
 - [Tools](#tools)
 - [Data Cleaning/Preparation](#data-cleaningpreparation)
 - [Exploratory Data Analysis (EDA)](#exploratory-data-analysis-eda)
-- [Data Analysis](#data-analysis)
-- [Other Insights](#other-insights)
-- [Statistical Analysis](#statistical-analysis)
+- [Data Analysis & Data Visualizaation](#data-analysisdata-visualization)
 - [Results/Findings](#resultsfindings)
 - [Recommedations](#recommedations)
 
@@ -21,7 +19,7 @@ Vrinda online store wants to create an annual sales report for 2022. so that, Vr
 
 <Include Source Excel sheet>
   
-  - **index:** Unique sequentially value for each orders.
+  - **Index:** Unique sequentially value for each orders.
   - **Order ID:** Unique order number for each orders. 
   - **Cust ID:** Customer ID
   - **Gender:** Customer gender
@@ -29,7 +27,7 @@ Vrinda online store wants to create an annual sales report for 2022. so that, Vr
   - **Date:** Order date
   - **Status:** Order status
   - **Channel:** Channel through which order placed
-  - **SKU:** Customer ID
+  - **SKU:** Unique code assigned to each products
   - **Category:** Product category
   - **Size:** Product size
   - **Qty:** Number of product ordered
@@ -42,7 +40,7 @@ Vrinda online store wants to create an annual sales report for 2022. so that, Vr
 
 ### Tools
 - Excel
-- 	Data Cleaning, Data Analysis, Data Visualization
+  	Data Cleaning, Data Analysis, Data Visualization
 
 ### Data Cleaning/Preparation
 In the initial data preparation phase, we performed the following tasks
@@ -52,9 +50,9 @@ In the initial data preparation phase, we performed the following tasks
 
 ### Data Processing:
 1. Created new column 'Age Group' from 'Age' column using IFS formula in order to address business question. Categorized the customers as below
-   	Age >= 50, then 'Senior'
-   	Age >= 30, then 'Adult'
-   	Age < 30, then 'Tennager'
+   - Age >= 50, then 'Senior'
+   - Age >= 30, then 'Adult'
+   - Age < 30, then 'Tennager'
 2. Extracted only Month data from Date column in order to address business question.
 
 ### Exploratory Data Analysis (EDA)
@@ -64,83 +62,61 @@ EDA involved in exploring the A/B test data to answer some questions, such as:
 3. What is the average amount spent per user for the control and treatment groups, including users who did not convert?
 4. Extract the user ID, user’s country, user’s gender, user’s device type, user’s test group, whether or not they converted (spent > $0), and how much they spent in total ($0+).
 
-### Data Analysis
+### Data Analysis & Data Visualization
 
-1. Compare the sales and orders for 2022. Which month got the highest sales and orders?
-2. Who purchased more in 2022? Men or Women?
-3. What are different order status in 2022?
-4. Identify top 5 states contributing to the sales?
-5. Which channel is contributing to maximum sales?
-6. Highest selling category?
-7. Relation between age and gender based on number of orders?
+1. Compare the sales and orders for 2022. Which month got the highest sales and orders? </br>
 
-   ### Other Insights
-- Disturbation of amount spent.
-  
-  <img width="625" alt="Disturbation of amount spent" src="https://github.com/VimalVikash-Sigamani/Globox-A-B-Testing/assets/161229746/b5639513-2ad8-4235-9683-84f2bef3d6ba">
+   In March 2022, we experienced the highest sales and number of orders.
+   
+   <img width="361" alt="Sales Vs Orders" src="https://github.com/VimalVikash-Sigamani/Store-Analysis-in-Excel/assets/161229746/8b109573-2911-417d-864f-a12cd4ad1f2a">
 
-- Relationship between the test metrics (conversion rate and average amount spent) and the user’s device.
+3. Who purchased more in 2022? Men or Women? </br>
 
-  <img width="664" alt="Device insights" src="https://github.com/VimalVikash-Sigamani/Globox-A-B-Testing/assets/161229746/d563abf6-2884-4d4f-ae48-99e7e6bbe437">
+   Women made more purchases than men.
+   
+   <img width="366" alt="Men Vs Women" src="https://github.com/VimalVikash-Sigamani/Store-Analysis-in-Excel/assets/161229746/a33588c2-d2e9-4ee5-9203-17dd1bc14dec">
+   
+5. What are different order status in 2022? </br>
 
-  
-- Relationship between the test metrics (conversion rate and average amount spent) and the user’s gender.
+   92% of orders were delivered.
+   
+   <img width="359" alt="Status" src="https://github.com/VimalVikash-Sigamani/Store-Analysis-in-Excel/assets/161229746/a0989ee6-07de-415e-85ad-eaf87e17838d">
 
-  <img width="667" alt="Gender insights" src="https://github.com/VimalVikash-Sigamani/Globox-A-B-Testing/assets/161229746/bcf4157e-51cf-44ed-a728-f048541d52e5">
+6. Identify top 5 states contributing to the sales? </br>
+
+   Maharashtra, Karnataka, Uttar Pradesh, Telangana and Tamil nadu are top five states.
+
+   <img width="360" alt="Top 5 States" src="https://github.com/VimalVikash-Sigamani/Store-Analysis-in-Excel/assets/161229746/7571e9a7-cb15-4329-9c9e-082e213edc01">
+
+7. Which channel is contributing to maximum sales? </br>
+
+   Amazon contributes the maximum sales.
+
+     <img width="359" alt="Channels" src="https://github.com/VimalVikash-Sigamani/Store-Analysis-in-Excel/assets/161229746/12b697e8-4ed1-40ad-87ab-6dd6bf1b09ee">
+
+8. Highest selling category? </br>
+
+   Set emerges as the highest-selling product.
+   
+    <img width="364" alt="Category" src="https://github.com/VimalVikash-Sigamani/Store-Analysis-in-Excel/assets/161229746/e30b31ca-6d79-454c-947c-fcec33cb5738">
+
+9. Relation between age and gender based on number of orders? </br>
+
+   Age group of adult women (30-49 years) contributes the most, making up approximately 35% of the total.
+   
+    
 
 
-- Novelty effects
+    [Click here](https://docs.google.com/spreadsheets/d/1GU7lqwdvYfTGoxPXMLb5SucVjKEtxCC-vlK9KNT1xH8/edit#gid=392375140) for detailed calculations.
 
-  <img width="592" alt="Novelty effect" src="https://github.com/VimalVikash-Sigamani/Globox-A-B-Testing/assets/161229746/91dfdda4-ca20-46ed-9ca2-63cf697444e7">
-
-  
-
-### Statistical Analysis
-We measured below two key metrices and Hypothesis testing is done on these metrices to determine the outcome of A/B testing.
-
-1. Conversion rate:
-   -  Null Hypothesis H0: P1 = P2
-   -  Alternative Hypothesis H1: P1 != P2
-
-2. Average amount spent:
-	 - Null Hypothesis H0: u1 = u2
-   - Alternative Hypothesis H1: u1 != u2
-
-Google sheet is used to perform Hypothesis testing and Confidence interval calculation using Z-TEST and T-TEST model. [Click here](https://docs.google.com/spreadsheets/d/1GU7lqwdvYfTGoxPXMLb5SucVjKEtxCC-vlK9KNT1xH8/edit#gid=392375140) for detailed calculations.
-
- **Conversion rate:**
-- Z-Test is used to measure the Conversion rate.
-- Pooled Sample Proportion = 0.04278446356 
-- Standard Error = 0.001829526081 
-- Test Statistics = -3.86429177
-- P-Value = 0.0001114119853
-
-For conversion rate metric, P=0.0001 is less than significance thershold limit (0.05) and statistically significant. Hence we reject the null hypothesis and proved that there is a difference in user conversion rate between the control and treatment groups.
-
-With 95% Confidence level we determined that difference in conversion rate will falls between 0.0035% and 0.0107%.
-
-**Average amount spent:**
-- T-Test is used to measure the Average amount spent.
-- Mean of group A = 3.37451752 
-- Mean of group B = 3.390866667
-- Standard Deviation of group A = 25.93638327 
-- Standard Deviation of group B = 25.41410528 
-- Standard Error = 0.2321405061 
-- Test Statistics = -0.07042780472
-- Degree of Freedom = 24342 
-- P-Value = 0.9438537398
-
-For average amount spent metric, P=0.944 is not less than significance thershold limit (0.05) and statistically insignificant. Hence we fail to reject the null hypothesis and proved that there is no difference in average amount spent per user between the control and treatment groups.
-
-With 95% Confidence level we determined that difference in average spending of users will falls between -0.4387% and 0.4715%
-
+ 
 ### Results/Findings
-Statistical evidence shows that there is significant increase in conversion rate, hence its proves that users who saw banner at top of the website are tend to make more purchase than the users who didn't see the banner. So adding the banner will increase the purchase.
-
-On other hand, statistical evidence shows that there is no significant increase in average amount spend by the users, its proves that the banner doesn't influence the users to spend more on their purchase. 
-
-Eventhough number of purchase are increased, amount spend on the purchase is not increased. Hence there is no increase in reveneue.
-
+- Women exhibit a higher likelihood of purchasing compared to men, constituting approximately 64% of total sales.
+- The top three states are Maharashtra, Karnataka, and Uttar Pradesh, collectively contribute to approximately 69% of total sales.
+- The adult age group (30-49 years) makes the maximum contribution, accounting for around 50% of total sales.
+- Amazon, Myntra, and Flipkart serve as the top contributing channels, collectively contributing approximately 81% of total sales.
+- The top-selling products are Set, Kurta, and Western dress collectively contribute to approximately 88% of total sales.
+ 
 ### Recommedations
-Business to iterate the experiment for longer duration and with large number of users which will provide us more reliable results.
+To boost sales in 2023, focus on targeting female customers aged 30-49 residing in Maharashtra, Karnataka, and Uttar Pradesh. Show advertisements, offers, and coupons on Amazon, Myntra, and Flipkart platforms.
 
