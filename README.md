@@ -110,7 +110,7 @@ During the initial data preparation phase, the following tasks were undertaken:
 
 ### Interactive Dashboard
 To access the interactive dashboard:
-   [Click here to view the interactive dashboard](https://docs.google.com/spreadsheets/d/1GU7lqwdvYfTGoxPXMLb5SucVjKEtxCC-vlK9KNT1xH8/edit#gid=392375140)
+   [Click here to view the interactive dashboard](https://1drv.ms/x/s!AgeqcaEiKT2Xglc6oBA4PfvtY_fq?e=hKlNsD)
  
 ### Results/Findings
 - Women exhibit a higher likelihood of purchasing compared to men, constituting approximately 64% of total sales.
