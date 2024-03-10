@@ -18,7 +18,7 @@ Vrinda Online Store aims to generate a comprehensive annual sales report for 202
 
 ### Data Source
 
-To reference the data source [Click here](https://docs.google.com/spreadsheets/d/1GU7lqwdvYfTGoxPXMLb5SucVjKEtxCC-vlK9KNT1xH8/edit#gid=392375140)
+To reference the data source [Click here](https://github.com/VimalVikash-Sigamani/Store-Analysis-in-Excel/blob/7cca5575af41ee795e7e349ad69899151a681ca5/Vrinda%20Store%20Data%20Analysis_Backup%20copy.xlsx)
   
   - **Index:** Unique sequentially value for each orders.
   - **Order ID:** Unique order number for each orders. 
